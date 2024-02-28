@@ -1,0 +1,8 @@
+fun start(): String = "OK"
+
+fun main() {
+    println(start())
+}
+
+
+//function start return the string "OK"
