@@ -1,0 +1,17 @@
+val month = "(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)"
+
+fun getPattern(): String = """\d{2} $month \d{4}"""
+
+fun main() {
+    val inputDate = "13 JUN 1992"
+    val pattern = getPattern().toRegex()
+
+    if (pattern.matches(inputDate)) {
+        println("Valid date format: $inputDate")
+    } else {
+        println("Invalid date format: $inputDate")
+    }
+}
+
+//kotlin ada toRegex
+//ada .matches buat sama in format nya benar atau tidak

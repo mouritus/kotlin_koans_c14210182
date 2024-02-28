@@ -1,0 +1,33 @@
+fun sendMessageToClient(
+        client: Client?, message: String?, mailer: Mailer
+) {
+    val email = client?.personalInfo?.email
+    if (email != null && message != null) {
+        mailer.sendMessage(email, message)
+    }
+}
+
+class Client(val personalInfo: PersonalInfo?)
+class PersonalInfo(val email: String?)
+interface Mailer {
+    fun sendMessage(email: String, message: String)
+}
+
+class ConsoleMailer : Mailer {
+    override fun sendMessage(email: String, message: String) {
+        println("Sending message to $email: $message")
+    }
+}
+
+fun main() {
+    val clientInfo = PersonalInfo(email = "example@example.com")
+    val client = Client(personalInfo = clientInfo)
+    val message = "Hello, this is your notification!"
+
+    val mailer = ConsoleMailer()
+    sendMessageToClient(client, message, mailer)
+}
+
+//ada interface
+//ada class
+//bisa cek langsung kalo null atau gk

@@ -1,0 +1,10 @@
+fun joinOptions(options: Collection<String>) =
+        options.joinToString(prefix = "[", postfix = "]")
+        
+fun main() {
+    println(joinOptions(listOf("a","b","c")))
+}
+
+//ada collection di kotlin
+// collection itu terima list. array dll
+//joinToString ada prefix postfix
